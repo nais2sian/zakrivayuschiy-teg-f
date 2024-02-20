@@ -12,5 +12,11 @@
     url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),
       url('../fonts/Inter-Variable.woff2') format('woff2-variations');
   font-display: swap;
-  font-weight: 465 785;
+  font-weight: 400 785;
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+      font-family: 'Inter-Variable', sans-serif;
+  }
 }

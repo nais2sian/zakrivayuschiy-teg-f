@@ -45,7 +45,7 @@
   transform-origin: left;
 }
 
-.card__like-button:hover::before  {
+.card__like-button:hover::before {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -119,7 +119,7 @@
   transition-delay: 0.06s;
 }
 
-.like-icon.is-liked .heart{
+.like-icon.is-liked .heart {
   transform-origin: center;
   animation: heart 0.3s ease-in alternate;
   animation-delay: 0.1s;
