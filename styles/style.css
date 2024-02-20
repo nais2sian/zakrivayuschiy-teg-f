@@ -1,20 +1,349 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
-*/
-
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  color: var(--accent-color);
+  font-family: var(--main-font), Arial, sans-serif;
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  min-inline-size: 375px;
 }
+
+@supports (font-variation-settings: normal) {
+  .page {
+      font-family: 'Inter-Variable', sans-serif;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto 100px auto;
+  border: 2px solid var(--accent-color);
+  padding-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
+  font-family: var(--accent-font);
+  background-color: var(--background-color);
+  min-block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
+  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+}
+
+.header__title {
+  margin-bottom: 20px;
+  font-size: clamp(3.125rem, 2.7949rem + 1.4085vw, 4.0625rem);
+}
+
+.heder__subtitle {
+  margin-bottom: 25px;
+  font-weight: var(--main-text-weight);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.theme-menu__button {
+  position: relative;
+  border: none;
+  padding-left: 21px;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.theme-menu__button:disabled { 
+  opacity: 0.6;
+  color: var(--accent-color);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  font-family: var(--accent-font);
+  animation: arrow-movement 0.5s ease-in-out infinite alternate;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  color: var(--accent-color);
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  opacity: 0.6;
+  background-color: var(--accent-color);
+  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.theme-menu__button:focus-visible::after { 
+  transition: transform 0.3s ease;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.theme-menu__button::after {
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+
+
+
+/* MAIN CONTENT */
+
+
+
+
+.content {
+  margin: 100px auto 100px auto;
+  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+}
+
+.content__card { 
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
+}
+
+.reaction-box {
+  display: flex;
+  justify-content: end;
+  height: 38px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+.card__title {
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+}
+
+.picture-box {
+  position: relative;
+  z-index: 1;
+}
+
+.picture {
+  width: 100%;
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 2;
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  text-shadow:
+    -1px 0 var(--stroke-color),
+    0 1px var(--stroke-color),
+    1px 0 var(--stroke-color),
+    0 -1px var(--stroke-color);
+  mix-blend-mode: hard-light;
+}
+
+@supports((text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color))) {
+  .label {
+      text-shadow: none;
+      -webkit-text-stroke: 1px var(--stroke-color);
+      text-stroke: 1px var(--stroke-color);
+  }
+}
+
+.card__text-box {
+  display: grid;
+  gap: 27px;
+  margin: 25px;
+  font-family: var(--maint-font);
+  font-size: 18px;
+}
+
+.button__text {
+  position:  relative;
+  z-index: 3;
+  color:  var(--button-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  mix-blend-mode: difference;
+}
+
+.picture.sepia {
+  filter: sepia(60%) contrast(2) brightness(200%);
+}
+
+.picture.hue {
+  filter: hue-rotate(-90deg);
+}
+
+.picture.invert {
+  filter: invert(100%);
+}
+
+.picture.blur {
+  filter: blur(3px);
+}
+
+.picture.grayscale {
+  filter: grayscale(100%);
+}
+
+.picture.contrast {
+  filter: contrast(500%);
+}
+
+.picture.brightness {
+  filter: brightness(300%);
+}
+  
+.save-button { 
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  max-width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
+  margin: 2px auto 100px auto;
+  border: 2px solid var(--accent-color);
+  padding: 15px 18px;
+  font-size: 14px;
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+
+.save-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.save-button:hover::before  {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.floppy {
+  position: relative;
+  z-index: 3;
+  fill: var(--button-color);
+  inline-size: 21px;
+  block-size: 21px;
+  mix-blend-mode: difference;
+}
+
+.save-button:focus {
+  outline: none;
+}
+
+.save-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  box-shadow: 2px 2px var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+dialog {
+  gap: 30px;
+  border: 2px solid var(--accent-color);
+  padding: 30px;
+  background-color: var(--background-color);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+dialog[open] .modal-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content 234px;
+  align-items: center;
+  gap: 20px;
+}
+
+dialog[open] .floppy {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+dialog[open] .button__text {
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+dialog[open] .close-button {
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+  block-size: 38px;
+  inline-size: clamp(16.0625rem, 15.2702rem + 3.3803vw, 18.3125rem);
+}
+
+@media (width <= 375px) {
+  .header {
+    min-block-size: clamp(12.5rem, -33.6818rem + 230.9091vw, 20.4375rem);
+    inline-size: clamp(20rem, 0rem + 100vw, 23.4375rem);
+  }
+
+  .header__title {
+    font-size: clamp(2rem, -4.1818rem + 30.9091vw, 3.0625rem);
+  }
+
+  .heder__subtitle {
+    font-size: clamp(0.75rem, 0.0227rem + 3.6364vw, 0.875rem);
+    margin-bottom: clamp(0.625rem, -4.8295rem + 27.2727vw, 1.5625rem);
+  }
+
+  .theme-menu__list {
+    gap: clamp(0.1875rem, -3.8125rem + 20vw, 0.875rem);
+  }
+
+  .theme-menu__button {
+    font-size: 10px;
+  }
+
+  .content {
+    inline-size: clamp(20rem, 0rem + 100vw, 23.4375rem);
+  }
+
+  .floppy {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+  }

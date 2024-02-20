@@ -12,3 +12,140 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+@keyframes arrow-movement {
+  0% {
+   translate:0;
+  }
+  100% {
+    translate: 4px;
+  }
+}
+
+.card__like-button {
+  position: relative;
+  z-index: 1;
+  width: 130px;
+  border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.card__like-button:hover::before  {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.card__like-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  box-shadow: 2px 2px var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.card__icon-button {
+  border: 2px solid transparent;
+  background-color: var(--background-color);
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  transition: border 0.3s ease;
+}
+
+.heart .core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.heart:hover .core {
+  fill: var(--contour-color);
+}
+
+.heart .main-body {
+  transition: fill 0.3s linear 0.05s;
+}
+
+.heart:hover .main-body {
+  fill: var(--contour-color);
+}
+
+.like-icon:active .core {
+  fill: var(--main-body-fill);
+  transition: fill 0.3s linear;
+  transition-delay: 0.03s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--main-body-fill);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--main-body-fill);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--main-body-fill);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--main-body-fill);
+  transition: fill 0.3s linear;
+  transition-delay: 0.06s;
+}
+
+.like-icon.is-liked .heart{
+  transform-origin: center;
+  animation: heart 0.3s ease-in alternate;
+  animation-delay: 0.1s;
+}
+
+@keyframes heart {
+  from {
+    transform: scale(1);
+  }
+  
+  to {
+    transform: scale(1.5);
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in alternate;
+  animation-delay: 0.3s;
+}
+
+@keyframes sparks {
+  from {
+    fill: none;
+  }
+  to {
+    fill: var(--main-body-fill);
+  }
+}
+
