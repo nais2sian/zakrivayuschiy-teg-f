@@ -1,11 +1,11 @@
 .page {
   color: var(--accent-color);
-  font-family: var(--main-font), Arial, sans-serif;
+  min-inline-size: 375px;
   background-color: var(--background-color);
   background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
-  min-inline-size: 375px;
+  font-variation-settings: "wght" var(--main-text-weight);
 }
 
 .header {
@@ -42,7 +42,7 @@
 .theme-menu__button {
   position: relative;
   border: none;
-  padding-left: 21px;
+  padding-left: 22px;
   font-size: 14px;
   text-transform: uppercase;
   background-color: transparent;
@@ -123,6 +123,7 @@
 .card__title {
   padding: 5px 10px 5px 10px;
   font-size: 18px;
+  font-variation-settings: "wght" var(--header-weight);
 }
 
 .picture-box {
@@ -163,6 +164,7 @@
   margin: 25px;
   font-family: var(--maint-font);
   font-size: 18px;
+  font-weight: var(--main-text-weight);
 }
 
 .button__text {
@@ -302,32 +304,6 @@ dialog[open] .close-button {
 }
 
 @media (width <= 375px) {
-  .header {
-    min-block-size: clamp(12.5rem, -33.6818rem + 230.9091vw, 20.4375rem);
-    inline-size: clamp(20rem, 0rem + 100vw, 23.4375rem);
-  }
-
-  .header__title {
-    font-size: clamp(2rem, -4.1818rem + 30.9091vw, 3.0625rem);
-  }
-
-  .heder__subtitle {
-    font-size: clamp(0.75rem, 0.0227rem + 3.6364vw, 0.875rem);
-    margin-bottom: clamp(0.625rem, -4.8295rem + 27.2727vw, 1.5625rem);
-  }
-
-  .theme-menu__list {
-    gap: clamp(0.1875rem, -3.8125rem + 20vw, 0.875rem);
-  }
-
-  .theme-menu__button {
-    font-size: 10px;
-  }
-
-  .content {
-    inline-size: clamp(20rem, 0rem + 100vw, 23.4375rem);
-  }
-
   .floppy {
     inline-size: 28px;
     block-size: 28px;
