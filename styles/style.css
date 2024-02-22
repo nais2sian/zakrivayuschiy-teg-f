@@ -1,5 +1,6 @@
 @supports (font-variation-settings: normal) {
   .page {
+    font-family: 'Inter', sans-serif;
     font-variation-settings: "wght" var(--main-text-weight);
   }
 }

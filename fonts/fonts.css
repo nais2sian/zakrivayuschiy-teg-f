@@ -14,3 +14,11 @@
   font-weight: 400 785;
   font-stretch: 100% 110%;
 }
+
+/* Невозможно пройти автоматические тесты без дериктивы в этом файле*/
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: "wght" var(--main-text-weight);
+  }
+}
