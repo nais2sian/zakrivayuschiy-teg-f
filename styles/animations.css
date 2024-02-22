@@ -29,7 +29,7 @@
   outline: none;
 }
 
-.card__icon-button:focus-visible  {
+.card__icon-button:focus-visible {
   border: 2px solid var(--accent-color);
 }
 

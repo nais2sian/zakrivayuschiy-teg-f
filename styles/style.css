@@ -12,6 +12,7 @@
   background-size: cover;
   background-attachment: fixed;
   font-variation-settings: "wght" var(--main-text-weight);
+  font-family: var(--main-font), Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -21,7 +22,7 @@
   margin: 100px auto 100px auto;
   border: 2px solid var(--accent-color);
   padding: clamp(7.5rem, 6.3462rem + 4.9231vw, 8.5rem) 0 23px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   background-color: var(--background-color);
   inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
 }
@@ -67,7 +68,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   animation: arrow-movement 0.5s ease-in-out infinite alternate;
 }
 
@@ -125,7 +126,7 @@
 
 .picture-box {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
   border-top: 2px solid var(--accent-color);
 }
 
@@ -135,7 +136,7 @@
   left: 0;
   bottom: 2px;
   width: 100%;
-  height: 2px; 
+  height: 2px;
   background-color: var(--accent-color);
 }
 
@@ -150,7 +151,7 @@
   top: 25px;
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
   z-index: 2;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   text-transform: uppercase;
   font-size: 14px;
   text-shadow:
@@ -158,7 +159,7 @@
     0 1px var(--stroke-color),
     1px 0 var(--stroke-color),
     0 -1px var(--stroke-color);
-  opacity: 0.6;
+  opacity: 0.5;
   mix-blend-mode: hard-light;
 }
 
@@ -174,7 +175,7 @@
   display: grid;
   gap: 27px;
   padding: 24px 25px 24px 25px;
-  font-family: var(--maint-font);
+  font-family: var(--main-font), Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: var(--main-text-weight);
 }
@@ -183,7 +184,7 @@
   position:  relative;
   z-index: 3;
   color:  var(--button-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   mix-blend-mode: difference;
 }
@@ -309,7 +310,7 @@ dialog[open] {
 dialog[open] .modal-content {
   position: relative;
   display: grid;
-  grid-template-columns: min-content clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);;
+  grid-template-columns: min-content clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);
   align-items: center;
   gap: 20px;
 }
