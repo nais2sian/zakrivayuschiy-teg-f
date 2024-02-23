@@ -1,6 +1,10 @@
 @supports (font-variation-settings: normal) {
   .page {
-    font-variation-settings: "wght" var(--main-text-weight);
+    font-variation-settings: "wght" var(--main-font-weight, 400);
+  }
+
+  .card__title {
+    font-variation-settings: "wght" var(--header-font-weight, 700);
   }
 }
 
@@ -12,7 +16,6 @@
   background-size: cover;
   background-attachment: fixed;
   min-inline-size: 375px;
-  font-variation-settings: "wght" var(--main-text-weight);
 }
 
 .header {
@@ -31,14 +34,12 @@
   padding-bottom: 20px;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
-  font-variation-settings: "wght" var(--main-text-weight);
 }
 
 .heder__subtitle {
   padding-bottom: 23px;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
-  font-variation-settings: "wght" var(--main-text-weight);
 }
 
 .theme-menu__list {
@@ -121,7 +122,6 @@
 .card__title {
   padding: 5px 10px 5px 10px;
   font-size: 18px;
-  font-variation-settings: "wght" var(--header-weight);
 }
 
 .picture-box {
@@ -177,7 +177,6 @@
   padding: 24px 25px 24px 25px;
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
   font-size: 18px;
-  font-variation-settings: "wght" var(--main-text-weight);
 }
 
 .button__text {

@@ -1,8 +1,8 @@
 :root {
   --main-font: 'Inter', sans-serif;
   --accent-font: 'Press Start 2P', fantasy;
-  --main-text-weight: 400;
-  --header-weight: 700;
+  --main-font-weight: 400;
+  --header-font-weight: 700;
   --card-margin: 50px;
   --background-color: #FFFFFF;
   --accent-color: #000000;
