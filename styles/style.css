@@ -1,13 +1,3 @@
-@supports (font-variation-settings: normal) {
-  .page {
-    font-variation-settings: "wght" var(--main-font-weight, 400);
-  }
-
-  .card__title {
-    font-variation-settings: "wght" var(--header-font-weight, 700);
-  }
-}
-
 .page {
   color: var(--accent-color);
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
@@ -378,5 +368,15 @@ dialog[open] .close-button {
   .floppy {
     inline-size: 28px;
     block-size: 28px;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-variation-settings: "wght" var(--main-font-weight, 400);
+  }
+
+  .card__title {
+    font-variation-settings: "wght" var(--header-font-weight, 700);
   }
 }
