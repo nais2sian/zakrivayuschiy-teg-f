@@ -69,6 +69,11 @@
   }
 }
 
+.like-icon .sparks {
+  fill: var(--main-body-fill);
+  opacity: 0;
+}
+
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s ease-in alternate;
   animation-delay: 0.3s;
@@ -76,10 +81,10 @@
 
 @keyframes sparks {
   from {
-    fill: none;
+    opacity: 0;
   }
   to {
-    fill: var(--main-body-fill);
+    opacity: 1;
   }
 }
 
