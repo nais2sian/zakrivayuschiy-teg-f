@@ -71,7 +71,6 @@
 
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s ease-in alternate;
-  -webkit-animation: sparks 0.3s ease-in alternate;
   animation-delay: 0.3s;
 }
 
@@ -84,12 +83,4 @@
   }
 }
 
-@-webkit-keyframes sparks {
-  from {
-    fill: none;
-  }
-  to {
-    fill: var(--main-body-fill);
-  }
-}
 
